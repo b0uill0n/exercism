@@ -1,0 +1,19 @@
+class Series
+  def initialize(digits)
+    @series = digits
+  end
+
+  def slices(size)
+    raise ArgumentError if size > @series.length
+
+    digits = @series.chars
+    result = []
+
+    loop do
+      break if digits.take(size).length != size
+      result << digits.take(size).join
+      digits.shift
+    end
+    result
+  end
+end
