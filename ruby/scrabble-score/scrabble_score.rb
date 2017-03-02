@@ -19,7 +19,7 @@ class Scrabble
 
   def score
     compute_score =
-      @word.downcase.chars.each_with_object([]) do |c, a|
+      @word.chars.each_with_object([]) do |c, a|
         POINTS.each_key { |k| a << k if POINTS[k].include?(c) }
       end
 
